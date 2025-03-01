@@ -10,7 +10,7 @@ def extract_features(pcap_file):
     # Open the pcap file
     cap = pyshark.FileCapture(pcap_file, keep_packets=False)
 
-    # Lists to store the size of each packet and the time between packets.
+    # Lists to store the size of each packet and the time between packets
     packet_sizes = []
     inter_arrival_times = []
     # List to store the Time to Live (TTL) values from IP packets.
