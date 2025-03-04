@@ -202,7 +202,7 @@ def main():
     # Process each pcap file to extract features.
     data_of_all_records = [extract_features(fp) for fp in file_paths]
 
-    # Extract labels for plotting from the processed data.
+    # Extract labels for plotting from the processed data
     labels = [os.path.splitext(os.path.basename(f['file']))[0] for f in data_of_all_records]
 
     # Plot various graphs based on the extracted data.
