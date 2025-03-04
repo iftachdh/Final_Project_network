@@ -1,4 +1,4 @@
-# Final Project 
+# Final Project Network
 
 ## Overview
 This project is divided into three parts, exploring various aspects of network traffic analysis. 
