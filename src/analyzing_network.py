@@ -196,8 +196,18 @@ def main():
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
+    # Check if the source directory exists
+    if not os.path.exists(folder_path):
+        print(f"The source directory {folder_path} does not exist.")
+        return
+
     # Gather paths for all pcapng files in the specified directory.
     file_paths = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.pcapng')]
+
+    # Check if there are files in the directory
+    if not file_paths:
+        print(f"No pcapng files found in the directory {folder_path}.")
+        return
 
     # Process each pcap file to extract features.
     data_of_all_records = [extract_features(fp) for fp in file_paths]

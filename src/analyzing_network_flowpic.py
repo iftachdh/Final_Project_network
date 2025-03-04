@@ -105,8 +105,16 @@ def main():
         os.makedirs(output_folder)
 
     folder_path = '../records/all_records'
-    file_paths = sorted([os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.pcapng')])  # List all pcap files.
+    if not os.path.exists(folder_path):
+        print(f"The source directory {folder_path} does not exist.")
+        return
 
+    file_paths = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.pcapng')]
+    if not file_paths:
+        print(f"No pcapng files found in the directory {folder_path}.")
+        return
+
+    file_paths = sorted(file_paths)  # Sort the file paths.
     for file_path in file_paths:
         filename = os.path.splitext(os.path.basename(file_path))[0]  # Extract the base name for use in titles.
         if flag == '1':

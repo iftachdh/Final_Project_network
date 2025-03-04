@@ -26,6 +26,7 @@ We apply theoretical knowledge from the course and practical analysis to identif
 - **Functionality**: Analyzes and compares basic data metrics across recordings and generates various graphs illustrating different analyses such as total packet numbers, data volume in bytes, and more.
 - **Usage**:
   - **Input**: Place the recordings in the `records/records_comparing` folder.
+  - Each record should be type: '.pcapng'
   - **Output**: Graphs are saved in the `res/Graphs` folder.
 
 ### Network Flow Analysis (`analyzing_network_flowpic.py`)
@@ -33,6 +34,10 @@ We apply theoretical knowledge from the course and practical analysis to identif
 - **Features**: Option to filter traffic by the most common IP address to analyze specific application traffic.
 - **Usage**:
   - **Input**: Place recordings in the `records/all_records` folder.
+  -  Each record should be type: '.pcapng'
   - choose 1 to filter by most common IP in the records 0 for no filter
   - **Output**: Depending on user selection, graphs are saved in either the `res/FlowPicsFilter` or `res/FlowPics` folder.
 
+
+- we left the output graphs in the folders , if you run the code with the same name of records it will replace them,
+- if you run the code with new records it will create new graphs , and it will add them to the matching folder
